@@ -23,8 +23,8 @@ L'application suit strictement l'**architecture Clean Architecture** enseignée 
 ### Technologies utilisées :
 
 - **Flutter** - Framework de développement
-- **GetIt** - Injection de dépendances (comme dans le cours)
-- **Provider** - Gestion d'état avec ChangeNotifier (comme dans le cours)
+- **GetIt** - Injection de dépendances 
+- **Provider** - Gestion d'état avec ChangeNotifier 
 - **ChangeNotifier** - Notification des changements d'état
 
 ## 🎯 Respect du cahier des charges

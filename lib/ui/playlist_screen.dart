@@ -7,8 +7,6 @@ class PlaylistScreen extends StatelessWidget {
   const PlaylistScreen({super.key, required this.selectedSongs});
 
   void _simulateShare() {
-    // Simulation du partage comme dans le cours
-    // Dans une vraie app, on utiliserait Share.share()
     print('Playlist partagée: ${selectedSongs.map((s) => s.title).toList()}');
   }
 
@@ -20,6 +18,14 @@ class PlaylistScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
+          // Image placeholder pour la playlist
+          Container(
+            width: double.infinity,
+            height: 150,
+            color: Colors.grey[200],
+            child: const Icon(Icons.queue_music, size: 80, color: Colors.grey),
+          ),
+          const SizedBox(height: 16),
           Expanded(
             child: ListView.builder(
               itemCount: selectedSongs.length,

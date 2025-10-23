@@ -20,6 +20,14 @@ class SongDetailsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            // Image placeholder (à remplacer par la vraie image)
+            Container(
+              width: 200,
+              height: 200,
+              color: Colors.grey[300],
+              child: const Icon(Icons.album, size: 100, color: Colors.grey),
+            ),
+            const SizedBox(height: 20),
             TextFormField(
               initialValue: song.title,
               decoration: const InputDecoration(labelText: 'Title'),
