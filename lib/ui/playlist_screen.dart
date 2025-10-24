@@ -18,12 +18,12 @@ class PlaylistScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Image placeholder pour la playlist
-          Container(
+          // Image de la playlist
+          Image.asset(
+            "assets/images/note.png",
             width: double.infinity,
             height: 150,
-            color: Colors.grey[200],
-            child: const Icon(Icons.queue_music, size: 80, color: Colors.grey),
+            fit: BoxFit.cover,
           ),
           const SizedBox(height: 16),
           Expanded(

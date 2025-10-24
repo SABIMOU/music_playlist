@@ -8,6 +8,15 @@ class SongDetailsScreen extends StatelessWidget {
 
   const SongDetailsScreen({super.key, required this.song});
 
+  String _getAlbumImage(String album) {
+    // Utiliser LetitbleedRS.jpg pour Rolling Stones, note.png pour les autres
+    if (album == "Let It Bleed") {
+      return "assets/images/LetitbleedRS.jpg";
+    } else {
+      return "assets/images/note.png";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final presenter = context.watch<MusicPresenter>();
@@ -20,12 +29,20 @@ class SongDetailsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Image placeholder (à remplacer par la vraie image)
-            Container(
+            // Image de l'album
+            Image.asset(
+              _getAlbumImage(song.album),
               width: 200,
               height: 200,
-              color: Colors.grey[300],
-              child: const Icon(Icons.album, size: 100, color: Colors.grey),
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  width: 200,
+                  height: 200,
+                  color: Colors.grey[300],
+                  child: const Icon(Icons.album, size: 100, color: Colors.grey),
+                );
+              },
             ),
             const SizedBox(height: 20),
             TextFormField(
